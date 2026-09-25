@@ -1,0 +1,8 @@
+language = "typescript"
+# Fork: merged pull requests are the record of the upstream repository.
+repo = "emberjs/ember.js"
+test_command = "pnpm test"
+# NOTE: validation-phase blocker to solve if the funnel yields: ember tests run via
+# testem (browser QUnit) and the repo pins pnpm@10; node:22-bookworm carries neither
+# pnpm nor Chrome. A custom worker image will be needed for probes/scoring.
+worker_image = "node:22-bookworm@sha256:363e1587494626837fa7f9a23bdb453d13b0ff3c67c705c2805cfc69c2d2fad7"
